@@ -1,22 +1,20 @@
 let howMuchDroids = prompt('Какое количество дроидов вы хотите купить?');
 howMuchDroids = Number(howMuchDroids);
-
 const credits = 23580;
 const pricePerDroid = 3000;
-const canceledByUser = 'Отменено пользователем!';
-const insufficientFunds = 'Недостаточно средств на счету!';
-let totalPrice = howMuchDroids * pricePerDroid;
-let accountBalance = credits - totalPrice;
 let message;
 if (howMuchDroids === null) {
-    message = canceledByUser;
-    }   
-    else if (credits >= totalPrice) {
-        message = `Вы купили ${howMuchDroids} дроидов, на счету осталось ${accountBalance} кредитов.`;
-    }   
-    else {
-        message = insufficientFunds;
+    message = 'Отменено пользователем';
+    } else {
+        let totalPrice = howMuchDroids * pricePerDroid;
+        let accountBalance = credits - totalPrice;
+        if (credits >= totalPrice) {
+            message = `Вы купили ${howMuchDroids} дроидов, на счету осталось ${accountBalance} кредитов.`;
+        } else if (credits < totalPrice) {
+            message = 'Недостаточно средств на счету!';
+        } else {
+            message = 'Неверный ввод! Вводить можно только числовые значения.';
+        }
     }
 console.log(message);
-alert(message)
-
+alert(message);
