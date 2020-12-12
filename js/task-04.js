@@ -1,11 +1,11 @@
 let howMuchDroids = prompt('Какое количество дроидов вы хотите купить?');
-howMuchDroids = Number(howMuchDroids);
 const credits = 23580;
 const pricePerDroid = 3000;
 let message;
 if (howMuchDroids === null) {
     message = 'Отменено пользователем';
     } else {
+        howMuchDroids = String(howMuchDroids);
         let totalPrice = howMuchDroids * pricePerDroid;
         let accountBalance = credits - totalPrice;
         if (credits >= totalPrice) {
