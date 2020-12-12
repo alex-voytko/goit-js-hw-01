@@ -5,7 +5,6 @@ let message;
 if (howMuchDroids === null) {
     message = 'Отменено пользователем';
 } else {
-    howMuchDroids = String(howMuchDroids);
     let totalPrice = howMuchDroids * pricePerDroid;
     let accountBalance = credits - totalPrice;
     if (credits >= totalPrice) {
